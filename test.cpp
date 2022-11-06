@@ -1,15 +1,28 @@
-#include <bits/stdc++.h>
-
+#include <iostream>
 using namespace std;
 
-void fun(int a[]){
-    cout<< a[0] <<endl;
-}
-
-int main(){
-    int a[] = {1, 2, 3, 4};
-    fun(a+1);
-    cout<<a[0];
-
-    return 0;
-}
+int main()
+{
+   int i = 0;
+   for (i=0; i<20; i++)
+   {
+     switch(i)
+     {
+       case 0:
+         i += 5;
+         cout << i << " ";
+       case 1:
+         i += 2;
+         cout << i << " ";
+       case 5:
+         i += 5;
+         cout << i << " ";
+       default:
+         i += 4;
+         cout << i << " ";
+         break;
+     }
+     cout << i << " ";
+   }
+   return 0;
+} 

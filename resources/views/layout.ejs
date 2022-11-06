@@ -20,8 +20,13 @@
             <ul class="flex item-center">
                 <li class="ml-6"><a href="#">Menu</a></li>
                 <li class="ml-6"><a href="#">Offers</a></li>
+                <% if(user) { %>
                 <li class="ml-6"><a href="/Register">Register</a></li>
+                <% } else { %>
+                <li class="ml-6"><a href="/Register">Register</a></li>
+                <% } else { %>
                 <li class="ml-6"><a href="/Login">Login</a></li>
+                <% } %>
                 <li class="ml-6"><a href="/Cart" class="inline-block px-4 py-2 rounded-full flex item-center">
                     <span id="classCounter" class="text-white font-bold pr-2">0</span>
                     <img src="/img/cart.png" alt="cart">

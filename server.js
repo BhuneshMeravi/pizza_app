@@ -9,6 +9,7 @@ const mongoose = require('mongoose')
 const session = require('express-session')
 const flash = require('express-flash')
 const { json } = require('express')
+const passport = require('passport')
 // const MongoDbStore = require('connect-mongo')
 
 //Database connection
@@ -20,6 +21,13 @@ connection.once('open', function () {
 }).on('error', function (err) {
   console.log(err);
 });
+
+//passport config
+const passportInit = require('./app/config/passport')
+passportInit(passport)
+app.use(passport.initialize())
+app.use(passport.session())
+
 
 // Session store
 // new MongoDbStore({
@@ -43,6 +51,7 @@ app.use(require('express-session')({
 app.use(flash())
 //assets
 app.use(express.static('public'))
+app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 //set template engine
 app.use(expressLayout)
