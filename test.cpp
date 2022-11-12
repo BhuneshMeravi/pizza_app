@@ -1,28 +1,23 @@
 #include <iostream>
+#include <vector>
+
 using namespace std;
+
+int findMax(vector<int>& nums){
+        int max = nums[0];
+        for(int i=0; i<nums.size(); i++){
+            if(max < nums[i])
+                max = nums[i];
+        }
+        return max;
+    }
 
 int main()
 {
-   int i = 0;
-   for (i=0; i<20; i++)
-   {
-     switch(i)
-     {
-       case 0:
-         i += 5;
-         cout << i << " ";
-       case 1:
-         i += 2;
-         cout << i << " ";
-       case 5:
-         i += 5;
-         cout << i << " ";
-       default:
-         i += 4;
-         cout << i << " ";
-         break;
-     }
-     cout << i << " ";
-   }
-   return 0;
+  vector<int> nums;
+  for (int i = 0; i < nums.size(); i++)
+  {
+    cin>>nums[i];
+  }
+  cout<<"maximum value of the array is "
 } 

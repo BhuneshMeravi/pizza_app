@@ -1,5 +1,5 @@
 import axios from 'axios'
-import noty from 'noty'
+import Noty from 'noty'
 
 let addToCart = document.querySelectorAll('.add-to-cart')
 let cartCounter = document.querySelector('#cartCounter')
@@ -26,6 +26,7 @@ function updateCart(pizza) {
 addToCart.forEach((btn) => {
     btn.addEventListener('click', (e) => {
         let pizza = JSON.parse(btn.dataset.pizza)
-        console.log(pizza)
+        updateCart(pizza)
+        // console.log(pizza)
     })
 })
