@@ -7,6 +7,12 @@ function authController(){
             res.render('auth/login')
         },
         postLogin(req, res, next) {
+            const {email, password } = req.body
+            //validate request
+            if(!email || !password){
+                req.flash('error','all fields are required')
+                return(res.redirect('/login'))
+            }
             passport.authenticate('local', (err, user, info) =>{
                 if(err) {
                     req.flash('error', info.message )
@@ -73,6 +79,11 @@ function authController(){
 
 
             console.log(req.body)
+        },
+
+        logout(req, res){
+            req.logout()
+            return res.redirect('/login')
         }
     }
 }
