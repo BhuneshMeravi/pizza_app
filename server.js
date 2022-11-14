@@ -38,7 +38,7 @@ app.use(session({
   //   mongoUrl: process.env.MONGODB_URI,
   // }),
   store: mongoStore,
-  cookie: { maxAge: 1000 * 150 } // 24 hour
+  cookie: { maxAge: 1000 * 60 * 60 } // 24 hour
 }))
 
 //passport config
